@@ -1,5 +1,6 @@
 // COMSC 210 | Lab 7 | Yeji Kim
 #include <iostream>
+
 #include <string>
 
 using namespace std;
@@ -8,33 +9,28 @@ const int SIZE = 5;
 
 // reverse dynamic string array
 // returns pointer to modified array
-string* reverseArray(string* names)
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        string temp = *(names + i);
-        *(names + i) = *(names + (SIZE - 1 + i));
-        *(names +(SIZE - 1 + i)) = temp;
+string * reverseArray(string * names) {
+    for (int i = 0; i < SIZE; i++) {
+        string temp = * (names + i);
+        *(names + i) = * (names + (SIZE - 1 + i));
+        *(names + (SIZE - 1 + i)) = temp;
     }
 
     return names;
 }
 
 // display elements of string array
-void displayArray(string* names)
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        cout << *(names + i) << " ";
+void displayArray(string * names) {
+    for (int i = 0; i < SIZE; i++) {
+        cout << * (names + i) << " ";
     }
 
     cout << endl;
 }
 
-int main()
-{
+int main() {
     // create dynamic string array
-    string* names = new string[SIZE];
+    string * names = new string[SIZE];
 
     // populate array with 5 names
     *(names + 0) = "Abby";
